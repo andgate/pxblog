@@ -7,9 +7,13 @@ defmodule Pxblog.User do
     field :password_digest, :string
 
     timestamps
+    
+    # Virtual Fields
+    field :password, :string, virtual: true
+    field :password_confirmation, :string, virtual: true
   end
 
-  @required_fields ~w(username email password_digest)
+  @required_fields ~w(username email password password_confirmation)
   @optional_fields ~w()
 
   @doc """

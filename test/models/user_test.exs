@@ -3,7 +3,7 @@ defmodule Pxblog.UserTest do
 
   alias Pxblog.User
 
-  @valid_attrs %{email: "some content", password_digest: "some content", username: "some content"}
+  @valid_attrs %{email: "foo@bar.com", username: "Foo Bar", password: "foobar", password_confirmation: "foobar"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
