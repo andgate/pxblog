@@ -13,6 +13,8 @@ defmodule Pxblog.User do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
   end
+  
+  has_many :posts, Pxblog.Post
 
   @required_fields ~w(username email password password_confirmation)
   @optional_fields ~w()

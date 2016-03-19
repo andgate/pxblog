@@ -8,6 +8,8 @@ defmodule Pxblog.Post do
     timestamps
   end
 
+  belongs_to :user, Pxblog.User
+
   @required_fields ~w(title body)
   @optional_fields ~w()
 
