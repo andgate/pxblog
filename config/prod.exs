@@ -26,3 +26,5 @@ config :pxblog, Pxblog.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
+  
+config :comeonin, bcrypt_log_rounds: 14

@@ -1,5 +1,6 @@
 defmodule Pxblog.User do
   use Pxblog.Web, :model
+  import Comeonin.Bcrypt, only: [hashpwsalt: 1]
 
   schema "users" do
     field :username, :string
@@ -25,5 +26,15 @@ defmodule Pxblog.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> hash_password
+  end
+  
+  def hash_password(changeset) do
+    if password = get_change(changeset, :password) do
+      changeset
+      |> put_change(:password_digest, hashpwsalt(password))
+    else
+      changeset
+    end
   end
 end

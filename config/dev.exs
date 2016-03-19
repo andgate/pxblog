@@ -41,3 +41,5 @@ config :pxblog, Pxblog.Repo,
   hostname: "localhost",
   template: "template0",
   pool_size: 10
+
+config :comeonin, bcrypt_log_rounds: 14
