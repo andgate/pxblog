@@ -33,4 +33,11 @@ defmodule Pxblog.SessionController do
     Repo.get_by(User, username: user_params["username"])
     |> sign_in(user_params["password"], conn)
   end
+  
+  def delete(conn, _params) do
+    conn
+    |> delete_session(:current_user)
+    |> put_flash(:info, "Signed out successfully!")
+    |> redirect(to: page_path(conn, :index))
+  end
 end
