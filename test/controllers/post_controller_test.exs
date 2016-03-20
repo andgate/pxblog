@@ -2,8 +2,6 @@ defmodule Pxblog.PostControllerTest do
   use Pxblog.ConnCase
 
   alias Pxblog.Post
-  alias Pxblog.User
-  alias Pxblog.Role
   alias Pxblog.TestHelper
   
   @valid_attrs %{body: "some content", title: "some content"}
