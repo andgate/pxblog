@@ -5,10 +5,10 @@ defmodule Pxblog.Post do
     field :title, :string
     field :body, :string
 
+    belongs_to :user, Pxblog.User
+
     timestamps
   end
-
-  belongs_to :user, Pxblog.User
 
   @required_fields ~w(title body)
   @optional_fields ~w()

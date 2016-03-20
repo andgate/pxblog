@@ -39,7 +39,6 @@ config :pxblog, Pxblog.Repo,
   password: "postgres",
   database: "pxblog_dev",
   hostname: "localhost",
-  template: "template0",
   pool_size: 10
 
 config :comeonin, bcrypt_log_rounds: 14
